@@ -16,11 +16,10 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
 
-            background-image: url("manilamap.png");
+            background-image: url("stb.jpeg");
             background-size: cover;
             background-position: center;
 
-            /* 🔥 THIS CENTERS EVERYTHING */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -52,6 +51,11 @@
             margin-top: 20px;
             font-weight: bold;
         }
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -60,20 +64,17 @@
 <div class="box text-center">
 
     <h2 class="mb-3">FareRides Login</h2>
-
-    <!-- CHECKBOX -->
-    <div class="form-check mb-3 text-start">
-        <input class="form-check-input" type="checkbox" id="checkboxID" onclick="toggleInstructions()">
-        <label class="form-check-label">
-            Show Instructions
-        </label>
-    </div>
-
-    <p id="message" class="text-muted text-start"></p>
-
-    <!-- LOGIN -->
     <input type="text" id="username" class="form-control mb-2" placeholder="Username">
-    <input type="password" id="password" class="form-control mb-3" placeholder="Password">
+    <input type="password" id="password" class="form-control mb-2" placeholder="Password">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">Stay logged in</label>
+        </div>
+
+        <a href="#" onclick="forgotPassword()">Forgot password?</a>
+    </div>
 
     <button class="btn btn-custom w-100" onclick="login()">Login</button>
 
@@ -83,26 +84,26 @@
 
 <script>
 
-// LOGIN (if-else with === and &&)
+
 function login() {
 
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    let correctUser = "admin";
-    let correctPass = "1234";
+    let correctUser = "jaeeon";
+    let correctPass = "tungtungtungtusahur";
 
     if (username === correctUser && password === correctPass) {
-        document.getElementById("result").innerHTML = "✅ Access Granted";
-        document.getElementById("result").style.color = "lightgreen";
+        document.getElementById("result").innerHTML = "hello jaeeon u tungtungtungsahur";
+        alert("welcome king");
     } else {
-        document.getElementById("result").innerHTML = "❌ Access Denied";
-        document.getElementById("result").style.color = "red";
+        document.getElementById("result").innerHTML = "wrong username or password buddy";
+        alert("incorrect username or password");
     }
 }
 
-// SWITCH (checkbox)
-function toggleInstructions() {
+
+function function_name_here() {
 
     let variable_name = document.getElementById("checkboxID").checked;
 
@@ -117,6 +118,11 @@ function toggleInstructions() {
             document.getElementById("message").innerHTML = "";
         break;
     }
+}
+
+
+function forgotPassword() {
+    alert("idk ur password bro i think ur username is jaeeon and the password is tungtungtungsahur");
 }
 
 </script>
